@@ -1,0 +1,13 @@
+[Unit]
+Description=location data agGREGation
+After=network.target influxd.service
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/opt/wailin/greg
+ExecStart=/opt/wailin/greg/run-greg.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

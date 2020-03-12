@@ -1,0 +1,12 @@
+[Unit]
+Description=ais collection
+After=network.target greg.service
+
+[Service]
+User=pi
+Group=pi
+ExecStart=/home/pi/ais.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

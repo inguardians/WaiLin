@@ -1,0 +1,12 @@
+[Unit]
+Description=glonass collection
+After=multi-user.target dev-ttyGLONASS.device greg.service
+
+[Service]
+User=pi
+Group=pi
+ExecStart=/opt/wailin/station/glonass.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

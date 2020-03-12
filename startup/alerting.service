@@ -1,0 +1,11 @@
+[Unit]
+Description=satnav alerting
+After=network.target influxd.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/wailin.conf
+User=pi
+Group=pi
+WorkingDirectory=/opt/wailin/greg
+ExecStart=/opt/wailin/greg/alerting.py
